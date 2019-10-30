@@ -1,6 +1,3 @@
-<!-- Navbar -->
-<app-navbar></app-navbar>
-
 <!-- List -->
 <div class="container" id="breedContainer">
     <div *ngIf="breedsArray.length < 1" class="center-align">
@@ -8,7 +5,7 @@
     </div>
     <div *ngIf="breedsArray.length > 0" class="row">
         <div *ngFor="let item of breedsArray; let i = index" class="col s12 m3 lg3">
-            <a (click)="showBreeds()" class="showClick">
+            <a (click)="showBreeds(item.name)" class="showClick">
                 <mz-card
                     class="white-text"
                     [hoverable]="true">
@@ -28,6 +25,3 @@
         </div>
     </div>
 </div>
-
-<!-- Footer -->
-<app-footer></app-footer>

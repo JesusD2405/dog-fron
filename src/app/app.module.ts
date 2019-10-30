@@ -27,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/layouts/navbar/navbar.component';
 import { FooterComponent } from './components/layouts/footer/footer.component';
 import { PreloaderComponent } from './components/layouts/preloader/preloader.component';
+import { BreedDetailsComponent } from './components/breed-details/breed-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PreloaderComponent } from './components/layouts/preloader/preloader.com
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    BreedDetailsComponent
   ],
   imports: [
     BrowserModule,
