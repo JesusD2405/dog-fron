@@ -12,6 +12,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { BreedDetailsComponent } from './components/breed-details/breed-details.component';
 
 const routes: Routes = [
   /*  
@@ -20,6 +21,13 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  /*  
+  *  Detalle de la raza 
+  */
+  {
+    path: 'breed/:breed/details',
+    component: BreedDetailsComponent,
   },
   {
     path: '**',

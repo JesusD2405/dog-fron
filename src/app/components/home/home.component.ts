@@ -20,7 +20,7 @@ import { BreedsImgRamdonService } from 'src/app/services/breeds-img-ramdon.servi
 })
 export class HomeComponent implements OnInit {
 
-  public breedsArray= [];
+  public breedsArray: Array<any> = [];
 
   constructor(
     private BreedsList: BreedsListAllService,
@@ -69,11 +69,6 @@ export class HomeComponent implements OnInit {
     error => {
       console.log(error)
     });
-  }
-
-  /* Función que visualiza */
-  showBreeds (name) {
-    console.log(name);
   }
 
 }

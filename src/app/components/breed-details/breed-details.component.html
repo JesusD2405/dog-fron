@@ -1,6 +1,45 @@
 <!-- Details -->
 <div class="container" id="breedContainer">
-    <div *ngIf="breedsArray.length < 1" class="center-align">
+    <div *ngIf="breedData.length < 1" class="center-align">
         <app-preloader></app-preloader>
+    </div>
+    <div *ngIf="breedData.length > 0" class="row center-align">
+        <div class="col s12 m12 l12">
+            <h4><strong>Raza:</strong> {{ breedName }}</h4>
+            <br><br>
+            <!-- Carousel -->
+            <ngx-slick-carousel class="carousel" 
+                    #slickModal="slick-carousel" 
+                    [config]="slideConfig" 
+                    (init)="slickInit($event)"
+                    (breakpoint)="breakpoint($event)"
+                    (afterChange)="afterChange($event)"
+                    (beforeChange)="beforeChange($event)">
+                <div ngxSlickItem *ngFor="let item of breedData" class="slide">
+                    <img src="{{ item }}" width="100%">
+                </div>
+            </ngx-slick-carousel>
+            <!-- <div class="carousel carousel-slider center">
+                <div class="carousel-fixed-item center">
+                    <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                    </div>
+                    <div class="carousel-item red white-text" href="#one!">
+                    <h2>First Panel</h2>
+                    <p class="white-text">This is your first panel</p>
+                    </div>
+                    <div class="carousel-item amber white-text" href="#two!">
+                    <h2>Second Panel</h2>
+                    <p class="white-text">This is your second panel</p>
+                    </div>
+                    <div class="carousel-item green white-text" href="#three!">
+                    <h2>Third Panel</h2>
+                    <p class="white-text">This is your third panel</p>
+                    </div>
+                    <div class="carousel-item blue white-text" href="#four!">
+                    <h2>Fourth Panel</h2>
+                    <p class="white-text">This is your fourth panel</p>
+                </div>
+            </div>             -->
+        </div>
     </div>
 </div>

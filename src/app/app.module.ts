@@ -16,6 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+/* Slider Module */
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 /* Materialize */
 import { MzCardModule } from 'ngx-materialize'
 import { MzSpinnerModule } from 'ngx-materialize';
@@ -42,6 +45,7 @@ import { BreedDetailsComponent } from './components/breed-details/breed-details.
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    SlickCarouselModule,
     MzCardModule,
     MzSpinnerModule,
     MzButtonModule,
