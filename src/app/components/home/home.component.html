@@ -1,0 +1,33 @@
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
+<!-- List -->
+<div class="container" id="breedContainer">
+    <div *ngIf="breedsArray.length < 1" class="center-align">
+        <app-preloader></app-preloader>
+    </div>
+    <div *ngIf="breedsArray.length > 0" class="row">
+        <div *ngFor="let item of breedsArray; let i = index" class="col s12 m3 lg3">
+            <a (click)="showBreeds()" class="showClick">
+                <mz-card
+                    class="white-text"
+                    [hoverable]="true">
+                    <mz-card-image>
+                        <img class="breeds-img" src="{{ item.img }}"/>
+                        <!-- <button mz-button mz-halfway-fab [float]="true"><i mz-icon [icon]="'add'"></i></button> -->
+                    </mz-card-image>
+                    <!-- <mz-card-image-title>
+                    </mz-card-image-title> -->
+                    <!-- <mz-card-title>
+                    </mz-card-title> -->
+                    <mz-card-content class="blue-text text-darken-2">
+                        <h4 class="flow-text" style="text-transform: capitalize;">{{ item.name }}</h4>
+                    </mz-card-content>
+                </mz-card>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>
