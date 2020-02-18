@@ -2,9 +2,9 @@
  *  @package        App.module.ts
  *  
  *  @author         Jesús David Pérez. <jdperez@guayanadev.com>.
- *  @copyright      Todos los derechos reservados. GuayanaDev. 2019.
+ *  @copyright      Todos los derechos reservados. GuayanaDev. 2020.
  *  
- *  @since          Versión 1.0, revisión 29-10-2019.
+ *  @since          Versión 1.0, revisión 18-02-2020.
  *  @version        1.0
  * 
  *  @final  
@@ -26,11 +26,13 @@ import { MzButtonModule } from 'ngx-materialize';
 import { MzIconModule, MzIconMdiModule } from 'ngx-materialize'
 
 /* Components */
-import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/layouts/navbar/navbar.component';
-import { FooterComponent } from './components/layouts/footer/footer.component';
-import { PreloaderComponent } from './components/layouts/preloader/preloader.component';
-import { BreedDetailsComponent } from './components/breed-details/breed-details.component';
+import { NavbarComponent } from './presentation/components/layouts/navbar/navbar.component';
+import { FooterComponent } from './presentation/components/layouts/footer/footer.component';
+import { PreloaderComponent } from './presentation/components/layouts/preloader/preloader.component';
+
+/* Views */
+import { HomeComponent } from './presentation/views/home/home.component';
+import { BreedDetailsComponent } from './presentation/views/breed-details/breed-details.component';
 
 @NgModule({
   declarations: [

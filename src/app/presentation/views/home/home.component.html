@@ -1,16 +1,16 @@
 <!-- List -->
 <div class="container" id="breedContainer">
-    <div *ngIf="breedsArray.length < 1" class="center-align">
+    <div *ngIf="!breeds.length" class="center-align">
         <app-preloader></app-preloader>
     </div>
-    <div *ngIf="breedsArray.length > 0" class="row">
-        <div *ngFor="let item of breedsArray; let i = index" class="col s12 m3 lg3">
+    <div *ngIf="breeds.length" class="row">
+        <div *ngFor="let item of breeds; let i = index" class="col s12 m3 lg3">
             <a [routerLink]="['/breed', item.name, 'details']" class="showClick">
                 <mz-card
                     class="white-text"
                     [hoverable]="true">
                     <mz-card-image>
-                        <img class="breeds-img" [src]="item.img"/>
+                        <img class="breeds-img" [src]="item.image"/>
                         <!-- <button mz-button mz-halfway-fab [float]="true"><i mz-icon [icon]="'add'"></i></button> -->
                     </mz-card-image>
                     <!-- <mz-card-image-title>
