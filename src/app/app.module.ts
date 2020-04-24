@@ -16,6 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+/* Modules */
+import { DataModule } from './data/data.module';
+
 /* Slider Module */
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -52,7 +55,8 @@ import { BreedDetailsComponent } from './presentation/views/breed-details/breed-
     MzSpinnerModule,
     MzButtonModule,
     MzIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DataModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,14 +4,14 @@
  *  @author         Jesús David Pérez. <jdperez@guayanadev.com>.
  *  @copyright      Todos los derechos reservados. GuayanaDev. 2020.
  *  
- *  @since          Versión 1.0, revisión 18-02-2020.
+ *  @since          Versión 1.0, revisión 23-04-2020.
  *  @version        1.0
  * 
  *  @final  
  */
 import { Component, OnInit } from '@angular/core';
-import { BreedModel } from '../../../core/domain/breed.model';
-import { GetAllBreedsUsecase } from '../../../core/usecases/get-all-breeds.usecase'
+import { BreedModel } from '../../../domain/models/breed.model';
+import { GetAllBreedsUsecase } from '../../../domain/usecases/breed/get-all-breeds.usecase';
 
 @Component({
   selector: 'app-home',
@@ -30,13 +30,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getBreedsAll();
+    this.getBreeds();
   }
 
-  getBreedsAll(){
-    this.getAllBreeds.execute(null).subscribe((value: BreedModel[]) => {
-      console.log(value);
-      this.breeds = value;
+  getBreeds(){
+    this.getAllBreeds.execute(null).subscribe( data => {
+      console.log(data);
+      this.breeds = data;
     })
   }
 
