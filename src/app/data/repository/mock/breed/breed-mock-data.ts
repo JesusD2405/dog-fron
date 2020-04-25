@@ -1,4 +1,4 @@
-export const breeds = { 
+export const breedData = { 
     "message": {
         "Golden Retriever": [],
         "Husky Siberiano": [],

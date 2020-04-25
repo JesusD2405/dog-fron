@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
-import { breeds } from './breed-mock-data';
+import { breedData } from './breed-mock-data';
 import { BreedModel } from '../../../../domain/models/breed.model';
 import { BreedMockEntity } from './breed-mock.entity';
 import { BreedRepository } from '../../../../domain/repositories/breed.repository';
@@ -17,14 +17,9 @@ export class BreedMockRepository extends BreedRepository {
   private mapper = new BreedMockRepositoryMapper();
   private breeds: BreedMockEntity;
 
-  dataImg = {
-    "message": "https://images.dog.ceo/breeds/hound-english/n02089973_846.jpg",
-    "status": "success"
-  }
-
   constructor() {
     super();
-    this.breeds= breeds;
+    this.breeds= breedData;
   }
 
   getAll(): Observable<BreedModel[]> {
@@ -32,8 +27,11 @@ export class BreedMockRepository extends BreedRepository {
   }
 
   getBreedByName(name: string): Observable<BreedModel> {
-    const breeds = this.mapper.mapFrom(this.breeds);
+    const breed = this.mapper.mapFrom(this.breeds).find(item => item.name === name);
 
-    return from([ breeds.find(item => item.name === name) ]);
+    if(!breed)
+      return from([]);
+    
+    return from([ breed ]);
   }
 }

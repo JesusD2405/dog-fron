@@ -4,7 +4,7 @@
  *  @author         Jesús David Pérez. <jdperez@guayanadev.com>.
  *  @copyright      Todos los derechos reservados. GuayanaDev. 2020.
  *  
- *  @since          Versión 1.0, revisión 18-02-2020.
+ *  @since          Versión 1.0, revisión 25-04-2020.
  *  @version        1.0
  * 
  *  @final  

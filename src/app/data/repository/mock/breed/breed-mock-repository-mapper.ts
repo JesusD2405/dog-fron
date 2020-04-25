@@ -6,11 +6,18 @@ import { BreedMockEntity } from './breed-mock.entity';
 export class BreedMockRepositoryMapper extends Mapper <BreedMockEntity, BreedModel[]> {
   
   mapFrom(param: BreedMockEntity): BreedModel[] {
-    return Object.keys(param.message).map(item => { 
+    let breeds = Object.keys(param.message);
+    
+    return breeds.map(item => { 
       return { 
         'name': item, 
         'image': [], 
-        'subBreed': []
+        'subBreed': !param.message[item].length ? [] : param.message[item].map(data => {
+          return {
+            name: data,
+            image: []
+          }
+        })
       } 
     }); 
   }
