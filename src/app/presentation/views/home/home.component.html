@@ -4,7 +4,7 @@
         <app-preloader></app-preloader>
     </div>
     <div *ngIf="breeds.length" class="row">
-        <div *ngFor="let item of breeds; let i = index" class="col s12 m3 lg3">
+        <div *ngFor="let item of breeds; let i = index" class="col s12 m3 l3">
             <a [routerLink]="['/breed', item.name, 'details']" class="showClick">
                 <mz-card
                     class="white-text"

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UseCase } from '../../base/use-case';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 
 import { BreedRepository } from '../../repositories/breed.repository';
 import { ImageRepository } from '../../repositories/image.repository';

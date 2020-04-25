@@ -1,17 +1,17 @@
 export const breedData = { 
     "message": {
         "Golden Retriever": [],
-        "Husky Siberiano": [],
-        "Buldog": [
+        "Pastor Aleman": [],
+        "Bulldog": [
             "Boston",
             "English",
             "French"
         ],
-        "Pastor Aleman": [],
+        "Husky Siberiano": [],
+        "Labrador": [],
+        "Cocker Spaniel": [],
         "Pitbull": [],
-        "Coker Spanish": [],
         "Boxer": [],
-        "Labrador": []
     },
     "status": "success"
 };

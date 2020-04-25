@@ -17,17 +17,26 @@ export class ImageMockRepository extends ImageRepository {
   private mapper = new ImageMockRepositoryMapper();
   private images: ImageMockEntity;
 
+  oldStr: string;
+
   constructor() {
     super();
     this.images= dataImg;
+    this.oldStr= "breed_name";
   }
 
-  getAllImages(): Observable<string[]> {
-    return from([ ]);
+  getAllImages(name: string): Observable<string[]> {
+    const image = this.images.message.toString();
+    const newStr = name;
+
+    return from([ [image.replace(this.oldStr, newStr)] ]);
   }
 
-  getOneImage(): Observable<string> {
-    return from([ this.mapper.mapFrom(this.images) ]);
+  getOneImage(name: string): Observable<string> {
+    const image = this.images.message.toString();
+    const newStr = name;
+
+    return from([ image.replace(this.oldStr, newStr) ]);
   }
 
   getVariousImages(number: number): Observable<string[]> {
