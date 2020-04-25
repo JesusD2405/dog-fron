@@ -10,9 +10,9 @@
  *  @final  
  */
 import { Component, OnInit } from '@angular/core';
-// import { BreedsListAllService } from 'src/app/services/breeds-list-all.service';
-// import { BreedsImgAllService } from 'src/app/services/breeds-img-all.service';
 import { ActivatedRoute, Params } from '@angular/router';
+import { GetBreedByNameUsecase } from '../../../domain/usecases/breed/get-byName-breed.usecase';
+import { BreedModel } from '../../../domain/models/breed.model';
 
 @Component({
   selector: 'app-breed-details',
@@ -21,30 +21,24 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class BreedDetailsComponent implements OnInit {
 
-  public breedData: Array<any> = [];
-  public breedName: String;
+  public breedData: BreedModel;
+  public breedName: string;
 
   constructor(
-    // private BreedsImg: BreedsImgAllService,
-    private routeActive: ActivatedRoute
+    private routeActive: ActivatedRoute,
+    private getBreedByName: GetBreedByNameUsecase,
   ) { 
-    this.breedName = this.routeActive.snapshot.params.breed
+    this.breedName = this.routeActive.snapshot.params.breed;
   }
 
   ngOnInit() {
-    // this.getBreed();
+    this.getBreed();
   }
 
-  /* Función que obtiene las fotos aleatorias (8) */
-  // getBreed () {
-  //   this.BreedsImg.getBreed(this.breedName).subscribe((response: any) => {
-  //     // console.log(response);
-  //     this.breedData = response.message
-  //     console.log(this.breedData);
-  //   },
-  //   error => {
-  //     console.log(error)
-  //   });
-  // }
+  getBreed () {
+    this.getBreedByName.execute(this.breedName).subscribe(breed => {
+      this.breedData= breed;
+    })
+  }
 
 }

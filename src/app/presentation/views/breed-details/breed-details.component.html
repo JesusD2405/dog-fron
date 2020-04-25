@@ -1,9 +1,9 @@
 <!-- Details -->
 <div class="container" id="breedContainer">
-    <div *ngIf="breedData.length < 1" class="center-align">
+    <div *ngIf="!breedData" class="center-align">
         <app-preloader></app-preloader>
     </div>
-    <div *ngIf="breedData.length > 0" class="row center-align">
+    <div *ngIf="breedData" class="row center-align">
         <div class="col s12 m12 l12">
             <h4><strong>Raza:</strong> {{ breedName }}</h4>
             <br><br>
@@ -15,7 +15,7 @@
                     (breakpoint)="breakpoint($event)"
                     (afterChange)="afterChange($event)"
                     (beforeChange)="beforeChange($event)">
-                <div ngxSlickItem *ngFor="let item of breedData" class="slide">
+                <div ngxSlickItem *ngFor="let item of breedData.image" class="slide">
                     <img src="{{ item }}" width="100%">
                 </div>
             </ngx-slick-carousel>
